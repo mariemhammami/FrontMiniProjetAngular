@@ -1,0 +1,16 @@
+<nav class="navbar navbar-blue bg-dark">
+
+
+
+      <a class="nav-link" [routerLink]="['/message']" style="color: black; size: 2ch"style="color: aliceblue; font-size: large">CHATROOM</a>
+
+      <a class="nav-link" *ngIf="!auth.loggedIn()"[routerLink]="['/register']" style="color: aliceblue; font-size: large">Register</a>
+
+
+      <a class="nav-link" *ngIf="!auth.loggedIn()"[routerLink]="['/login']"style="color: aliceblue; font-size: large">Login</a>
+
+      <a class="nav-link" style="color: aliceblue; font-size: large"*ngIf=" auth.loggedIn()"  (click)="auth.logoutUser()">Logaut</a>
+
+
+</nav>
+  <router-outlet></router-outlet>
