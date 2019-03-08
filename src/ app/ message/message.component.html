@@ -1,10 +1,12 @@
 <div class="row" *ngIf="userID">
 <div class="col s12 m7">
   <div class="card">
-   <b >  {{userID}}</b>
-      <b > {{user}} said :</b>
-      {{msg.contenu}}
+       <b > {{user}}</b>
 
+    <div *ngFor="let i of msg">
+      {{msg.user.username}} said :
+      {{msg.contenu}}
+    </div>
  <input type="text" [(ngModel)]="msg" >
 
 <input type="button" name="chat" (click)="send(msg,userID)" value="Send">
