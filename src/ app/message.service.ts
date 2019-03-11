@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { Observable , Subject} from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { WebsocketsService } from './websockets.service';
+
 
 
 @Injectable({
@@ -17,13 +17,17 @@ export class MessageService {
 msg; id;
 
 messages: Subject<any>;
-    constructor(private http: HttpClient, private router: Router, private wsService: WebsocketsService) {
+    constructor(private http: HttpClient, private router: Router) {
 
 
      }
 
-  sendMessage(msg, id): any {
-    return this.http.post<any>(this.msgURL, this.msg, this.id);
+  sendMessage(id, msg): any {
+    console.log(msg + " " + id);
+    const obj = {contenu: msg,
+    usermessage: id
+  };
+    return this.http.post<any>(this.msgURL, obj);
    }
 
    getMessage() {
