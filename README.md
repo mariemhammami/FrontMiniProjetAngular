@@ -8,7 +8,7 @@ Backend:
 
 -Configurer notre Base de Données a l'aide du  fichier .Env :  php bin/cosole docrtine:database:create 
 
-    1. créer l'entité "User" et L'entité "message":php bin/cosole make:entity ensuite php bin/cosole doctrine:schema:create (pour modifier en utilise la commande php bin/cosole doctrine:schema:update --force)
+    1. créer l'entité "User" et L'entité "message":php bin/cosole make:entity ensuite php bin/cosole doctrine:schema:create (pour modifier on utilise la commande php bin/cosole doctrine:schema:update --force)
 
 
 Pour créer l'API Rest ,nous commençons par installer les ensembles nécessaires ( composer require "le nom du bundle ")
