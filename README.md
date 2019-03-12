@@ -1,27 +1,41 @@
-# FrontMariemHAMMAMI
+Au niveau de la partie backend j'ai choisi le framework Symphony. Egalement je viens d'utiliser lors de l'authentification avec Le token. Mon choix de Symphony se manifeste par le fait qu'il est basé sur le langagage PHP et personnellement j'estime que je suis bien familiarisée avec PHP.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+Au niveau de la partie front j'ai choisi le framework Angular7 (utiliser les websockets ) en raison de la facilité de son usage et de sa richesse en terme de documentation.
 
-## Development server
+ 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Backend: 
 
-## Code scaffolding
+-Configurer notre Base de Données a l'aide du  fichier .Env :  php bin/cosole docrtine:database:create 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    1. créer l'entité "User" et L'entité "message":php bin/cosole make:entity ensuite php bin/cosole doctrine:schema:create (pour modifier en utilise la commande php bin/cosole doctrine:schema:update --force)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Pour créer l'API Rest ,nous commençons par installer les ensembles nécessaires ( composer require "le nom du bundle ")
 
-## Running unit tests
+- Installer le : sensio/framework-extra-bundle
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Installer le :  jms/serializer-bundle (cet ensemble  aiderer à sérialiser ou désirialiser les ressources de notre application
 
-## Running end-to-end tests
+- Installer le friendssymfony/reste-bundle: ce bundle nous aide à creer une API REST avec le fremework Symfony
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1.       Configurer le Token
 
-## Further help
+-Installer LexikJWTAuthenticationBundle : Cet ensemble fournit une authentification JWT (Json Web Token) pour votre API Symfony.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    Front:
+
+-Installer les services(authService,ChatSocket,MessageService)
+
+-Installer les components
+
+-Installer et configurer le guard (implementer la methode CanActive)
+
+-configurer l'interceptor (get le Token dans localStorage)
+
+-Configurer le app-routing
+
+Pour créer une application en temps réel  alors il faut : (npm install  "nom du package")
+
+-Installer le socket.io-client et @types/socket.io-client
+
